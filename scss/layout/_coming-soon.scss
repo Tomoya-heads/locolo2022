@@ -1,0 +1,222 @@
+.page-coming-soon {
+  width : 100vw;
+  height : 100vh;
+  position : relative;
+  &__inner {
+    height : 100%;
+    @include flex(flex, nowrap, space-between, normal, normal, row);
+    @include mq_sp{
+      flex-direction : column;
+    }
+  }
+  &__left {
+    width : 50%;
+    position : relative;
+    z-index : 2;
+    @include mq_sp{
+      width : 100%;
+      height :size_sp(450);
+    }
+    & img {
+      width : 100%;
+    }
+    &-ttl {
+      font-size : 50px;
+      font-weight : 700;
+      line-height : 1;
+      letter-spacing : .05em;
+      color : $white01;
+      position : absolute;
+      top : 50%;
+      left : 50%;
+      transform : translate(-50%, -50%);
+      white-space : nowrap;
+      @include mq_sp{
+        @include fz_vw(57);
+      }
+    }
+    &-list {
+      font-size : 19px;
+      font-weight : 700;
+      line-height : calc(32/19);
+      color : $white01;
+      position : absolute;
+      right : 10px;
+      bottom : 34px;
+      @include mq_sp{
+        @include fz_vw(22);
+        line-height : calc(34/22);
+        right : size_sp(16);
+        bottom : size_sp(45);
+      }
+    }
+    &-item {
+      &:last-of-type {
+        position : absolute;
+        left : -46px;
+        bottom : -27px;
+        @include mq_sp{
+          left : size_sp(-54);
+          bottom : size_sp(-31);
+        }
+      }
+    }
+  }
+  &__right {
+    width : 50%;
+    position : relative;
+    @include mq_sp{
+      width : 100%;
+      height : calc(100vh - 60vw);
+    }
+    &-bg {
+      width : 100%;
+      height : 100%;
+      background-image: url(./img/page/bg_comingsoon.svg);
+      background-size : cover;
+      background-repeat : no-repeat;
+      background-position : center;
+      transform : scale(1.1);
+    }
+    &-inner {
+      position : absolute;
+      top : 50%;
+      left : 50%;
+      transform : translate(-50%, -48%);
+      @include mq_sp{
+        transform : translate(-50%, -49%)
+      }
+    }
+    &-logo {
+      width : 260px;
+      margin : 0 auto;
+      @media (max-width: 810px) {
+        width : 240px;
+      }
+      @include mq_sp{
+        width : size_sp(306);
+      }
+    }
+    &-ttl {
+      font-size : 22px;
+      font-weight : 400;
+      letter-spacing : .1em;
+      line-height : 1;
+      display : block;
+      text-align : center;
+      margin-top : 28px;
+      @media (max-width: 810px) {
+        font-size : 20px;
+      }
+      @include mq_sp{
+        @include fz_vw(26);
+        margin-top : size_sp(32);
+      }
+    }
+    &-open {
+      font-size : 24px;
+      letter-spacing : .1em;
+      line-height : 1;
+      text-align : center;
+      margin-top : 61px;
+      @media (max-width: 810px) {
+        font-size : 22px;
+      }
+      @include mq_sp{
+        @include fz_vw(32);
+        margin-top : size_sp(66);
+      }
+    }
+    &-txt {
+      font-size : 15px;
+      line-height : calc(40/15);
+      text-align : center;
+      margin-top : 46px;
+      @include mq_sp{
+        @include fz_vw(26);
+        line-height : calc(67/26);
+        margin-top : size_sp(51);
+      }
+      &-item {
+        white-space : nowrap;
+        &:not(:last-of-type) {
+          border-bottom : solid 1px $gray01;
+          @include mq_sp{
+            border-bottom : solid size_sp(2) $gray01;
+          }
+        }
+      }
+    }
+    &-list {
+      width : 212px;
+      margin : 40px auto 0;
+      @include flex(flex, nowrap, space-between, center, normal, row);
+      @include mq_sp{
+        width : size_sp(328);
+        margin-top : size_sp(44);
+      }
+    }
+    &-item {
+      width : 44px;
+      position : relative;
+      &:before {
+        content : '';
+        position : absolute;
+        width : 40px;
+        height : 10px;
+        border-radius : 50%;
+        left : 0;
+        bottom : -10px;
+        transition : .6s;
+      }
+      @include mq_sp{
+        width : size_sp(68);
+      }
+      &:hover {
+        & img {
+          animation: move-y .5s infinite alternate ease-in-out;
+          @include mq_tab{
+            animation : none;
+          }
+        }
+        &:before {
+          background-color : $black01;
+          @include mq_tab{
+            background-color : transparent;
+          }
+        }
+        & a {
+          opacity : 1;
+        }
+      }
+      & a {
+        display : block;
+      }
+      & img {
+        @keyframes move-y {
+          from {
+            transform: translateY(0);
+          }
+          to {
+            transform: translateY(-10px);
+          }
+        }
+      }
+    }
+  }
+  &__stamp {
+    width : 140px;
+    position : absolute;
+    top : 69px;
+    left : 50%;
+    transform : rotate(15deg) translate(-87%);
+    mix-blend-mode: multiply;
+    z-index : 3;
+    @include mq_sp{
+      width : size_sp(174);
+      top : size_sp(397);
+      left : size_sp(20);
+      transform : rotate(-15deg);
+    }
+  }
+}
