@@ -1902,6 +1902,12 @@ div.wpcf7-mail-sent-ok {
   position: relative;
 }
 
+@media (max-width: 767px) {
+  .page-coming-soon {
+    height: auto;
+  }
+}
+
 .page-coming-soon__inner {
   height: 100%;
   display: -webkit-box;
@@ -1925,6 +1931,9 @@ div.wpcf7-mail-sent-ok {
 
 @media (max-width: 767px) {
   .page-coming-soon__inner {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -2011,14 +2020,16 @@ div.wpcf7-mail-sent-ok {
 @media (max-width: 767px) {
   .page-coming-soon__right {
     width: 100%;
-    height: calc(100vh - 60vw);
   }
 }
 
 .page-coming-soon__right-bg {
   width: 100%;
-  height: 100%;
-  background-image: url(./img/page/bg_comingsoon.svg);
+  height: 200vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(./img/page/bg_comingsoon.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -2036,8 +2047,12 @@ div.wpcf7-mail-sent-ok {
 
 @media (max-width: 767px) {
   .page-coming-soon__right-inner {
-    -webkit-transform: translate(-50%, -49%);
-            transform: translate(-50%, -49%);
+    width: 86.66667vw;
+    padding: 11.73333vw 0 9.06667vw;
+    margin: 0 auto;
+    position: static;
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
 }
 
@@ -2178,6 +2193,8 @@ div.wpcf7-mail-sent-ok {
   bottom: -10px;
   -webkit-transition: .6s;
   transition: .6s;
+  -webkit-filter: blur(6px);
+          filter: blur(6px);
 }
 
 @media (max-width: 767px) {
@@ -2199,7 +2216,7 @@ div.wpcf7-mail-sent-ok {
 }
 
 .page-coming-soon__right-item:hover:before {
-  background-color: #222222;
+  background-color: #969696;
 }
 
 @media (max-width: 1024px) {
@@ -2239,21 +2256,20 @@ div.wpcf7-mail-sent-ok {
 }
 
 .page-coming-soon__stamp {
-  width: 140px;
+  width: 115px;
   position: absolute;
-  top: 69px;
+  top: 35px;
   left: 50%;
-  -webkit-transform: rotate(15deg) translate(-87%);
-          transform: rotate(15deg) translate(-87%);
-  mix-blend-mode: multiply;
+  -webkit-transform: rotate(-15deg) translateX(-8%);
+          transform: rotate(-15deg) translateX(-8%);
   z-index: 3;
 }
 
 @media (max-width: 767px) {
   .page-coming-soon__stamp {
-    width: 23.2vw;
-    top: 52.93333vw;
-    left: 2.66667vw;
+    width: 18.66667vw;
+    top: 58.8vw;
+    left: 2.53333vw;
     -webkit-transform: rotate(-15deg);
             transform: rotate(-15deg);
   }

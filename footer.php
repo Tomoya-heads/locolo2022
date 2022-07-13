@@ -3,8 +3,8 @@
 <!-- ////コンテンツ -->
 
 <!-- フッター -->
-<footer class="common-footer" id="Footer">
-  <!-- <span class="common-footer__pageTop" style="display:none">TOP</span>
+<!-- <footer class="common-footer" id="Footer">
+  <span class="common-footer__pageTop" style="display:none">TOP</span>
   <div class="common-footer__inner">
     <nav class="common-footer__nav">
       <ul class="common-footer__navMenu">
@@ -18,8 +18,8 @@
       </ul>
     </nav>
     <small class="common-footer__copyright">Copyright &copy; サイト名</small>
-  </div> -->
-</footer>
+  </div>
+</footer> -->
 <!-- ////フッター -->
 
 </div><!-- / #Wrapper-->

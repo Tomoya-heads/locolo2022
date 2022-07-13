@@ -6,9 +6,10 @@
 // =============================================================
 
 $NotoSans: 'Noto Sans JP', sans-serif;
+$NotoSerif: 'Noto Serif JP', serif;
 
 $base-font-family: $NotoSans;
-$base-font-family-en: 'Noto Serif JP', serif;// Meiryo
+$base-font-family-en: $NotoSerif;// Meiryo
 $base-font-size: 15;
 $base-font-size-sp: 26;
 

@@ -2,10 +2,14 @@
   width : 100vw;
   height : 100vh;
   position : relative;
+  @include mq_sp{
+    height : auto;
+  }
   &__inner {
     height : 100%;
     @include flex(flex, nowrap, space-between, normal, normal, row);
     @include mq_sp{
+      justify-content : flex-start;
       flex-direction : column;
     }
   }
@@ -67,12 +71,14 @@
     position : relative;
     @include mq_sp{
       width : 100%;
-      height : calc(100vh - 60vw);
     }
     &-bg {
       width : 100%;
-      height : 100%;
-      background-image: url(./img/page/bg_comingsoon.svg);
+      height : 200vh;;
+      position : absolute;
+      top : 0;
+      left : 0;
+      background-image: url(./img/page/bg_comingsoon.jpg);
       background-size : cover;
       background-repeat : no-repeat;
       background-position : center;
@@ -84,7 +90,11 @@
       left : 50%;
       transform : translate(-50%, -48%);
       @include mq_sp{
-        transform : translate(-50%, -49%)
+        width : size_sp(650);
+        padding : size_sp(88) 0 size_sp(68);
+        margin : 0 auto;
+        position : static;
+        transform : translate(0);
       }
     }
     &-logo {
@@ -168,6 +178,7 @@
         left : 0;
         bottom : -10px;
         transition : .6s;
+        filter: blur(6px);
       }
       @include mq_sp{
         width : size_sp(68);
@@ -180,7 +191,7 @@
           }
         }
         &:before {
-          background-color : $black01;
+          background-color : $gray01;
           @include mq_tab{
             background-color : transparent;
           }
@@ -205,17 +216,16 @@
     }
   }
   &__stamp {
-    width : 140px;
+    width : 115px;
     position : absolute;
-    top : 69px;
+    top : 35px;
     left : 50%;
-    transform : rotate(15deg) translate(-87%);
-    mix-blend-mode: multiply;
+    transform : rotate(-15deg) translateX(-8%);
     z-index : 3;
     @include mq_sp{
-      width : size_sp(174);
-      top : size_sp(397);
-      left : size_sp(20);
+      width : size_sp(140);
+      top : size_sp(441);
+      left : size_sp(19);
       transform : rotate(-15deg);
     }
   }
