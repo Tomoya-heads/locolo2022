@@ -71,6 +71,8 @@
     position : relative;
     @include mq_sp{
       width : 100%;
+      height : calc(100vh - 60vw);
+      min-height : size_sp(904);
     }
     &-bg {
       width : 100%;
@@ -91,10 +93,10 @@
       transform : translate(-50%, -48%);
       @include mq_sp{
         width : size_sp(650);
-        padding : size_sp(88) 0 size_sp(68);
-        margin : 0 auto;
-        position : static;
-        transform : translate(0);
+        // padding : size_sp(88) 0 size_sp(68);
+        // margin : 0 auto;
+        // position : static;
+        transform : translate(-50%, -49%);
       }
     }
     &-logo {
@@ -141,20 +143,55 @@
       font-size : 15px;
       line-height : calc(40/15);
       text-align : center;
+      width : 444px;
       margin-top : 46px;
+      @include mq_tab{
+        width : 376px;
+      }
+      @media (max-width: 810px) {
+        width : 284px;
+      }
       @include mq_sp{
         @include fz_vw(26);
         line-height : calc(67/26);
+        width : size_sp(650);
         margin-top : size_sp(51);
       }
       &-item {
-        white-space : nowrap;
-        &:not(:last-of-type) {
+        display : inline-block;
+        // width : 100%;
+        &.first {
+          width : 100%;
           border-bottom : solid 1px $gray01;
           @include mq_sp{
             border-bottom : solid size_sp(2) $gray01;
           }
         }
+        &.second {
+          @include mq_tab{
+            width : 100%;
+            border-bottom : solid 1px $gray01;
+          }
+          @include mq_sp{
+            border-bottom : solid size_sp(2) $gray01;
+          }
+        }
+        &.third {
+          @media (max-width: 810px) {
+            width : 100%;
+            border-bottom : solid 1px $gray01;
+          }
+          @include mq_sp{
+            width : auto;
+            border-bottom : none;
+          }
+        }
+        // &:not(:last-of-type) {
+        //   border-bottom : solid 1px $gray01;
+        //   @include mq_sp{
+        //     border-bottom : solid size_sp(2) $gray01;
+        //   }
+        // }
       }
     }
     &-list {

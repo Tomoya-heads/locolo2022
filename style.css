@@ -2020,6 +2020,8 @@ div.wpcf7-mail-sent-ok {
 @media (max-width: 767px) {
   .page-coming-soon__right {
     width: 100%;
+    height: calc(100vh - 60vw);
+    min-height: 120.53333vw;
   }
 }
 
@@ -2048,11 +2050,8 @@ div.wpcf7-mail-sent-ok {
 @media (max-width: 767px) {
   .page-coming-soon__right-inner {
     width: 86.66667vw;
-    padding: 11.73333vw 0 9.06667vw;
-    margin: 0 auto;
-    position: static;
-    -webkit-transform: translate(0);
-            transform: translate(0);
+    -webkit-transform: translate(-50%, -49%);
+            transform: translate(-50%, -49%);
   }
 }
 
@@ -2123,7 +2122,20 @@ div.wpcf7-mail-sent-ok {
   font-size: 15px;
   line-height: calc(40/15);
   text-align: center;
+  width: 444px;
   margin-top: 46px;
+}
+
+@media (max-width: 1024px) {
+  .page-coming-soon__right-txt {
+    width: 376px;
+  }
+}
+
+@media (max-width: 810px) {
+  .page-coming-soon__right-txt {
+    width: 284px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2131,21 +2143,50 @@ div.wpcf7-mail-sent-ok {
     font-size: 13px;
     font-size: 3.46667vw;
     line-height: calc(67/26);
+    width: 86.66667vw;
     margin-top: 6.8vw;
   }
 }
 
 .page-coming-soon__right-txt-item {
-  white-space: nowrap;
+  display: inline-block;
 }
 
-.page-coming-soon__right-txt-item:not(:last-of-type) {
+.page-coming-soon__right-txt-item.first {
+  width: 100%;
   border-bottom: solid 1px #969696;
 }
 
 @media (max-width: 767px) {
-  .page-coming-soon__right-txt-item:not(:last-of-type) {
+  .page-coming-soon__right-txt-item.first {
     border-bottom: solid 0.26667vw #969696;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page-coming-soon__right-txt-item.second {
+    width: 100%;
+    border-bottom: solid 1px #969696;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-coming-soon__right-txt-item.second {
+    border-bottom: solid 0.26667vw #969696;
+  }
+}
+
+@media (max-width: 810px) {
+  .page-coming-soon__right-txt-item.third {
+    width: 100%;
+    border-bottom: solid 1px #969696;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-coming-soon__right-txt-item.third {
+    width: auto;
+    border-bottom: none;
   }
 }
 
