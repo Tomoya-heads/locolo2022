@@ -17,21 +17,9 @@
       <div class="<?php echo $pageName;?>__right">
         <div class="<?php echo $pageName;?>__right-bg"></div>
         <div class="<?php echo $pageName;?>__right-inner">
-          <div class="<?php echo $pageName;?>__right-logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/logo_locolo.svg" class="object_fit"></div>
+          <h1 class="<?php echo $pageName;?>__right-logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/logo_locolo.svg" class="object_fit"></h1>
           <span class="<?php echo $pageName;?>__right-ttl">-ロコロ・ヴィレッジ-</span>
           <div class="<?php echo $pageName;?>__right-open">淡路島にオープン予定</div>
-          <!-- <p class="<?php echo $pageName;?>__right-txt">
-            <span class="<?php echo $pageName;?>__right-txt-item pctab-only">淡路島の大自然の中 風や音を感じ “何もしないをする”</span>
-            <span class="<?php echo $pageName;?>__right-txt-item mid-only">淡路島の大自然の中 風や音を感じ</span>
-            <span class="<?php echo $pageName;?>__right-txt-item mid-only">“何もしないをする”</span>
-            <span class="<?php echo $pageName;?>__right-txt-item sp-only">淡路島の大自然の中 風や音を感じ “何もしないをする”</span>
-            <span class="<?php echo $pageName;?>__right-txt-item pc-only">キャンプやサウナ、BBQ、焚き火でアナログな感覚を取り戻して</span>
-            <span class="<?php echo $pageName;?>__right-txt-item tab-only">キャンプやサウナ、BBQ、焚き火で</span>
-            <span class="<?php echo $pageName;?>__right-txt-item tab-only">アナログな感覚を取り戻して</span>
-            <span class="<?php echo $pageName;?>__right-txt-item sp-only">キャンプやサウナ、BBQ、焚き火で</span>
-            <span class="<?php echo $pageName;?>__right-txt-item sp-only">アナログな感覚を取り戻して</span>
-            <span class="<?php echo $pageName;?>__right-txt-item">あなたも“0 / ゼロ”に戻ってみませんか？</span> -->
-
             <p class="<?php echo $pageName;?>__right-txt">
               <span class="<?php echo $pageName;?>__right-txt-item first">
                 <span class="<?php echo $pageName;?>__right-txt-item third">淡路島の大自然の中 風や音を感じ</span><br class="mid-only">
@@ -43,7 +31,6 @@
               </span><br>
               あなたも"0 / ゼロ"に戻ってみませんか？
             </p>
-          <!-- </p> -->
           <ul class="<?php echo $pageName;?>__right-list">
             <li class="<?php echo $pageName;?>__right-item">
               <a href="https://www.youtube.com/channel/UCTOp6AMiEcsWlXDrbxabK1w" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_youtube.svg" class="object_fit"></a>
