@@ -5,18 +5,24 @@
 // 読み込みは非同期で行って下さい。（script.jpに記載あり）
 // =============================================================
 
+@font-face {
+	font-family: "Palette Mosaic";
+	src: url("fonts/Palette_Mosaic/PaletteMosaic-Regular.ttf");
+}
+
 $NotoSans: 'Noto Sans JP', sans-serif;
 $NotoSerif: 'Noto Serif JP', serif;
+$PaletteMosaic: 'Palette Mosaic', sans-serif;
 
 $base-font-family: $NotoSans;
-$base-font-family-en: $NotoSerif;// Meiryo
+$base-font-family-en: $PaletteMosaic;// Meiryo
 $base-font-size: 15;
-$base-font-size-sp: 26;
+$base-font-size-sp: 28;
 
 $base-font-color: $black01;
 $base-font-weight: 300;
-$base-line-height: (40/15);
-$base-line-height-sp: (69/26);
+$base-line-height: (35/15);
+$base-line-height-sp: (58/28);
 
 // =============================================================
 // その他設定

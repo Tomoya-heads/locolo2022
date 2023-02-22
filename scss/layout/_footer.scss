@@ -3,9 +3,32 @@
 
 .common-footer{
   position: relative;
-  background-color: $black00;
+  background-color: $blue02;
   color: $white00;
+  // margin-top : 86px !important;
+  @include mq_sp{
+    // margin-top : size_sp(115) !important;
+  }
   @include mq_sp{}
+  &:before {
+    content: "";
+    width : 100%;
+    height : 86px;
+    background-image : url(./img/common/icn_wave-item.svg);
+    background-size : contain;
+    background-repeat: repeat;
+    position: absolute;
+    top : -85px;
+    left : 50%;
+    transform: translateX(-50%);
+    z-index : 2;
+    @include mq_sp{
+      width : 102%;
+      height : size_sp(115);
+      background-image : url(./img/common/icn_wave-item-sp.svg);
+      top : size_sp(-114.5);
+    }
+  }
   &__pageTop{
     @include font-size(17);
     color: $black00;
@@ -13,136 +36,192 @@
     text-align: center;
     letter-spacing: 0.1em;
     font-weight: 500;
+    width : 42px;
     position: fixed;
-    right: calc(20px - 0.05em);
+    right: 9px;
     bottom: 20px;
     z-index: 5;
-    padding-top: 37px;
     cursor: pointer;
     @include mq_sp{
-      $vw_20: size_sp(20);
-      @include fz_vw(28);
-      line-height: (40/28);
-      width: size_sp(74);
-      right: calc(#{$vw_20} - 0.05em);
-      bottom: size_sp(40);
-      padding-top: size_sp(63);
+      display: none !important;
     }
-    &:before{
-      content: "";
-      width: 44px;
-      height: 37px;
-      background: url(http://placehold.jp/000000/ffffff/44x37.png?text=Top) no-repeat center/cover;
-      position: absolute;
-      top: 0;
-      left: calc(50%);
-      transform: translateX(-50%);
-      z-index: 0;
-      transition: 0.5s;
-      @include mq_sp{
-        width: size_sp(74);
-        height: size_sp(63);
-        background: url(http://placehold.jp/000000/ffffff/74x63.png?text=Top) no-repeat center/cover;
-      }
+    // &.active {
+    //   & .common-footer {
+    //     &__pageTop {
+    //       &-img {
+    //         & img {
+    //           &:first-of-type {
+    //             opacity: 1;
+    //           }
+    //           &:nth-of-type(2) {
+    //             opacity: 0;
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+    &-txt {
+      width : 33px;
+      margin : 0 auto;
+    }
+    &-img {
+      margin-top : 4.6px;
+      position: relative;
+      // & img {
+      //   transition-duration: .6s;
+      //   &:first-of-type {
+      //     opacity: 1;
+      //   }
+      //   &:nth-of-type(2) {
+      //     position : absolute;
+      //     top : 0;
+      //     left : 0;
+      //     opacity : 1;
+      //   }
+      // }
     }
     &.is-stop{
       position: absolute;
-      bottom: calc(100% + 20px);
-      @include mq_sp{
-        $vw_40: size_sp(40);
-        bottom: calc(100% + #{$vw_40});
-      }
-    }
-    &:hover{
-      &:before{
-        transform: translate(-50%,-30%) rotateY(180deg);
-      }
+      bottom: calc(100% + 90px);
     }
   }
   &__inner{
-    max-width: 768px;
+    max-width: 640px;
     width: 100%;
-    padding: 36px 0 30px;
+    padding: 23px 0 30px;
     margin: 0 auto;
     @include mq_sp{
-      max-width: size_sp(640);
-      padding: size_sp(83) 0 size_sp(46);
+      max-width: size_sp(590);
+      padding: size_sp(60) 0 size_sp(46);
     }
   }
-  &__nav{
-    &Menu{
-      @include flex(flex, wrap, center, normal, normal, row);
-      line-height: 1;
-      li{
-        margin-right: calc(40px - 0.1em);
-        letter-spacing: 0.1em;
+  &__logo {
+    width : 199.4px;
+    margin : 0 auto;
+    @include mq_sp{
+      width : size_sp(299);
+    }
+  }
+  &__list{
+    padding : 44px 0 33px;
+    @include flex(flex, wrap, center, normal, normal, row);
+    border-bottom : solid 2px $white00;
+    @include mq_sp{
+      padding : size_sp(88) 0 size_sp(54);
+      border-bottom : solid size_sp(3) $white00;
+    }
+  }
+  &__item{
+    font-size : 18px;
+    font-weight: 700;
+    line-height : 1;
+    @include mq_sp{
+      @include fz_vw(32);
+      text-align: center;
+      width : size_sp(120);
+      white-space: nowrap;
+    }
+    &:nth-of-type(2) {
+      @include mq_sp{
+        width : size_sp(210);
+      }
+    }
+    &:nth-of-type(5) {
+      @include mq_sp{
+        width : size_sp(210);
+      }
+    }
+    &:nth-of-type(n + 4) {
+      @include mq_sp{
+        margin-top : size_sp(54);
+      }
+    }
+    &:not(:last-of-type) {
+      margin-right : 32px;
+      @include mq_sp{
+        margin-right : 0;
+      }
+    }
+    &:not(:nth-of-type(3n)) {
+      @include mq_sp{
+        margin-right : size_sp(56);
+      }
+    }
+    &:last-of-type {
+      @include mq_sp{
+        margin-right : 0;
+      }
+    }
+    & a{
+      position: relative;
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+  &__sns {
+    margin-top : 40px;
+    @include flex(flex, wrap, center, normal, normal, row);
+    @include mq_sp{
+      margin-top : size_sp(50);
+    }
+    &-item {
+      width : 42px;
+      @include mq_sp{
+        width : size_sp(74);
+      }
+      &:not(:last-of-type) {
+        margin-right : 30px;
         @include mq_sp{
-          @include fz_vw(34);
-          width: 33.32%;
-          text-align: center;
-          margin-right: 0;
+          margin-right : size_sp(50);
         }
-        &:nth-last-of-type(2){
-          margin-right: 0;
-          @include mq_sp{}
+      }
+    }
+  }
+  &__sub {
+    &List {
+      width : 100%;
+      margin-top : 53px;
+      @include flex(flex, wrap, center, normal, normal, row);
+      @include mq_sp{
+        margin-top : size_sp(56);
+      }
+    }
+    &Item {
+      font-size : 12px;
+      letter-spacing: .1em;
+      line-height : 1;
+      @include mq_sp{
+        @include fz_vw(24);
+      }
+      &:not(:last-of-type) {
+        margin-right : 20px;
+        @include mq_sp{
+          margin-right : size_sp(50);
         }
-        &:nth-of-type(3n){
-          @include mq_sp{
-            margin-right: 0;
-          }
-        }
-        &:nth-of-type(n + 4){
-          @include mq_sp{
-            margin-top: size_sp(70);
-          }
-        }
-        &:last-of-type{
-          @include font-size(14);
-          width: 100%;
-          text-align: center;
-          margin-top: 36px;
-          margin-right: 0;
-          @include mq_sp{
-            @include fz_vw(24);
-            margin-top: size_sp(98);
-          }
-        }
-        a{
-          position: relative;
-          &:hover{
-            opacity: 1;
-            &:after{
-              width: 100%;
-            }
-          }
-          &:after{
-            content: "";
-            width: 0;
-            height: 1px;
-            background: $white00;
-            position: absolute;
-            left: 50%;
-            bottom: -3px;
-            transform: translateX(-50%);
-            transition: 0.3s;
-            @media screen and (max-width: 900px) {
-              content: none;
-            }
-          }
-        }
+      }
+      & a {
+        display: block;
       }
     }
   }
   &__copyright{
-    @include font-size(12);
+    font-size : 12px;
     display: block;
     text-align: center;
     line-height: 1;
     letter-spacing: 0.095em;
-    margin-top: 30px;
+    margin-top: 25px;
     @include mq_sp{
       @include fz_vw(24);
-      margin-top: size_sp(54);
+      margin-top: size_sp(52);
+    }
+  }
+  & .mod-btn {
+    margin : 29px auto 0;
+    @include mq_sp{
+      margin-top : size_sp(48);
     }
   }
 }

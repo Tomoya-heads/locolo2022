@@ -1,81 +1,92 @@
 /* layout > header
 ============================================================================== */
 
-$header_height_pc: 80px;
+$header_height_pc: 70px;
 $header_height_sp: size_sp(99);
 
 .home{
   .common-header{
+    transform : translateY(-100%);
+    &.active {
+      transform : translateY(0);
+    }
   }
 }
 
 .common-header{
-  // Coming Soonが終わったら、コメントアウト外す
-  // width: 100%;
-  // height: $header_height_pc;
-  // background: $black00;
-  // color: $white00;
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // z-index: 100;
-  // color: $white00;
-  // transition: 0.5s;
-  // @include mq_sp{
-  //   height: $header_height_sp;
-  // }
+  width: 100%;
+  height: $header_height_pc;
+  color: $white00;
+  background-image : url(./img/common/bg_header.svg);
+  background-size : cover;
+  background-repeat: repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  color: $white00;
+  transition: 1s;
+  @include mq_tab{
+    height : 99px;
+  }
+  @include mq_sp{
+    width: 102%;
+    height: $header_height_sp;
+    background-image : url(./img/common/bg_header-sp.svg);
+  }
   &.open{
     background: $black00;
   }
-  &.is-active{
-    background: $black00;
-    box-shadow: 0 3px 6px rgba($black00,0.1);
-  }
+  // &.is-active{
+  //   background: $black00;
+  //   box-shadow: 0 3px 6px rgba($black00,0.1);
+  // }
   &__inner{
     @include flex(flex, wrap, space-between, center, normal, row);
     position: relative;
-    max-width: 1180px;
     width: 100%;
     height: 100%;
-    margin: 0 auto;
-    @include mq_tab{}
-    @include mq_sp{}
+    padding : 0 20px;
+    @include mq_tab{
+      justify-content: center;
+      padding: 5px 0 0;
+    }
+    @include mq_sp{
+      padding: size_sp(5) 0 0;
+    }
   }
   &__logo{
+    width : 153px;
     position: relative;
     font-size: 0;
     font-weight: 400;
+    margin-bottom : 6px;
     @include mq_tab{
-    }
-    @media screen and (max-width: 900px) {
-      @include abso-center();
+      width : 240px;
     }
     @include mq_sp{
-      width: size_sp(200);
+      width: size_sp(240);
     }
     a{
       display: block;
       position: relative;
       width: 100%;
-      @include mq_sp{
-      }
     }
   }
   &__toggle{
     @include abso-center-v();
     display: none;
-    width: 54px;
-    height: 45px;
-    left: 27px;
     cursor: pointer;
-    @media screen and (max-width: 900px) {
+    @include mq_tab{
       display: block;
-    }
-    @include mq_sp{
-      display: block;
-      width: size_sp(54);
-      height: size_sp(45);
-      left: size_sp(27);
+      width: 54px;
+      height: 45px;
+      left: 30px;
+      @include mq_sp{
+        width: size_sp(54);
+        height: size_sp(45);
+        left: size_sp(30);
+      }
     }
     &.open{
       span{
@@ -99,7 +110,8 @@ $header_height_sp: size_sp(99);
       height: 3px;
       background: $white00;
       transition: 0.5s;
-      @media screen and (max-width: 900px) {
+      @include mq_tab{
+        height : 3px;
         display: block;
       }
       @include mq_sp{
@@ -118,81 +130,96 @@ $header_height_sp: size_sp(99);
     }
   }
   &__nav{
-    @include abso-center();
-    width: auto;
-    @media screen and (max-width: 900px) {
+    width: 634px;
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -65%);
+    @include mq_tab{
+      width: 100%;
+      padding: 18px 0 80px;
+      background-color: rgba($green01,0.9);
       display: none;
       position: absolute;
-      top: 100%;
+      top : 98px;
       left: 0;
       transform: none;
-      width: 100%;
-      padding: 30px 0 30px;
-      background-color: rgba($black00,0.8);
     }
     @include mq_sp{
-      padding: size_sp(30) 0 size_sp(30);
+      padding: size_sp(18) 0 size_sp(80);
+      top : size_sp(98);
     }
   }
-  &__menu{
+  &__list{
     @include flex(flex, nowrap, center, center, normal, row);
     width: 100%;
-    @media screen and (max-width: 900px) {
+    @include mq_tab{
       display: block;
       flex-wrap: wrap;
     }
-    @include mq_sp{
+  }
+  &__item{
+    font-size : 18px;
+    font-weight: 700;
+    line-height : 1;
+    @media screen and (max-width:1100px) {
+      font-size : 16px;
+      text-align: center;
     }
-    li{
-      @include font-size(20);
-      letter-spacing: 0.1em;
-      margin-right: calc(40px - 0.1em);
+    @include mq_sp{
+      @include fz_vw(32);
+    }
+    &:not(:last-of-type) {
+      margin-right : 31px;
       @include mq_tab{
-        @include font-size(16);
-        margin-right: calc(30px - 0.1em);
+        margin-right : 0;
       }
-      @media screen and (max-width: 900px) {
-        @include font-size(30);
-        text-align: center;
-        line-height: 1;
-        letter-spacing: 0.15em;
-        margin-right: 0;
+    }
+    a{
+      display: block;
+      position: relative;
+      @include mq_tab{
+        display: inline-block;
+        padding: 37px 0;
       }
       @include mq_sp{
-        @include fz_vw(30);
+        padding: size_sp(37) 0;
       }
-      a{
-        position: relative;
-        @media screen and (max-width: 900px) {
-          display: inline-block;
-          padding: 39px 0;
+      &:hover{
+        opacity: 1;
+      }
+    }
+    &:last-of-type{
+      margin-right: 0;
+    }
+  }
+  &__sns {
+    margin-bottom : 10px;
+    @include mq_tab{
+      margin : 50px auto 0;
+    }
+    @include mq_sp{
+      margin : size_sp(50) auto 0;
+    }
+    &-list {
+      @include flex(flex, wrap, center, center, normal, row);
+    }
+    &-item {
+      width : 36px;
+      @include mq_tab{
+        width : 74px;
+      }
+      @include mq_sp{
+        width : size_sp(74);
+      }
+      &:not(:last-of-type) {
+        margin-right : 14px;
+        @include mq_tab{
+          margin-right : 50px;
         }
         @include mq_sp{
-          padding: size_sp(39) 0;
+          margin-right : size_sp(50);
         }
-        &:hover{
-          opacity: 1;
-          &:after{
-            width: 100%;
-          }
-        }
-        &:after{
-          content: "";
-          width: 0;
-          height: 2px;
-          background: $white00;
-          position: absolute;
-          left: 50%;
-          bottom: -3px;
-          transform: translateX(-50%);
-          transition: 0.3s;
-          @media screen and (max-width: 900px) {
-            content: none;
-          }
-        }
-      }
-      &:last-of-type{
-        margin-right: 0;
       }
     }
   }

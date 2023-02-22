@@ -12,3 +12,194 @@
 		&--ttl{}
 	}
 }
+
+.mod-heading {
+  font-size : 33px;
+  font-weight : 700;
+  letter-spacing: .1em;
+  line-height : 1;
+  text-align: center;
+  @include flex(flex, nowrap, center, center, normal, column);
+  position: relative;
+  @include mq_sp{
+    @include fz_vw(43);
+  }
+  &.active {
+    & span {
+      &:before {
+        opacity: 1;
+        transform: translate(0, -58%);
+      }
+      &:after {
+        opacity: 1;
+        transform: translate(0, -48%) rotate(180deg);
+      }
+    }
+  }
+  &Sub {
+    font-size : 25px;
+    letter-spacing: .1em;
+    margin-top : 23px;
+    @include mq_sp{
+      @include fz_vw(32);
+      margin-top : size_sp(32);
+    }
+  }
+  & span {
+    display: inline-block;
+    position: relative;
+    &:before {
+      content : "";
+      width : 48px;
+      height : 44.6px;
+      background-image : url(./img/common/icn_wind.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      position : absolute;
+      top : 50%;
+      left : -80px;
+      transform: translate(-60%, -58%);
+      opacity: 0;
+      transition-duration : .8s;
+      transition-delay : .2s;
+      @include mq_sp{
+        width : size_sp(63.6);
+        height : size_sp(59.1);
+        left : size_sp(-105);
+      }
+    }
+    &:after {
+      content : "";
+      width : 48px;
+      height : 44.6px;
+      background-image : url(./img/common/icn_wind.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      position : absolute;
+      top : 50%;
+      right : -76px;
+      transform: translate(60%, -48%) rotate(180deg);
+      opacity: 0;
+      transition-duration : .8s;
+      transition-delay : .2s;
+      @include mq_sp{
+        width : size_sp(63.6);
+        height : size_sp(59.1);
+        right : size_sp(-101);
+      }
+    }
+  }
+}
+.mod-ttl {
+  font-size: 24px;
+  font-weight : 700;
+  line-height: 1;
+  text-align: center;
+  width : 100%;
+  position: relative;
+  @include mq_sp{
+    @include fz_vw(34);
+  }
+  &:before {
+    content : "";
+    width : 56px;
+    height : 3px;
+    background-image : url(./img/common/icn_stick-red.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top : -18px;
+    left : 50%;
+    transform : translateX(-50%);
+    @include mq_sp{
+      width : size_sp(85);
+      height : size_sp(5);
+      top : size_sp(-27);
+    }
+  }
+  &:after {
+    content : "";
+    width : 56px;
+    height : 6px;
+    background-image : url(./img/common/icn_twist-blue.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom : -19px;
+    left : 50%;
+    transform : translateX(-50%);
+    @include mq_sp{
+      width : size_sp(86);
+      height : size_sp(9);
+      bottom : size_sp(-30);
+    }
+  }
+  &.white {
+    color : $white00;
+    &:before {
+      background-image : url(./img/common/icn_stick-white.svg);
+      @include mq_sp{
+        width : size_sp(66);
+        height : size_sp(4);
+        transform : translateX(-42%);
+        background-image : url(./img/common/icn_stick-white-sp.svg);
+      }
+    }
+    &:after {
+      background-image : url(./img/common/icn_twist-white.svg);
+      @include mq_sp{
+        width : size_sp(68);
+        height : size_sp(8);
+        transform : translateX(-42%);
+        background-image : url(./img/common/icn_twist-white-sp.svg);
+
+      }
+    }
+  }
+}
+.mod-subTtl {
+  font-size : 17px;
+  font-weight: 700;
+  line-height : 1;
+  text-align: center;
+  position : relative;
+  @include mq_sp{
+    @include fz_vw(30);
+  }
+  &:before {
+    content : "";
+    width : 56px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left : 50%;
+    transform : translateX(-50%);
+    @include mq_sp{
+      width : size_sp(86);
+    }
+  }
+  &.red {
+    &::before {
+      height : 3px;
+      background-image : url(./img/common/icn_stick-red.svg);
+      bottom : -18px;
+      @include mq_sp{
+        background-image : url(./img/common/icn_stick-red-sp.svg);
+        height : size_sp(5);
+        bottom : size_sp(-26);
+      }
+    }
+  }
+  &.blue {
+    &::before {
+      height : 6px;
+      background-image : url(./img/common/icn_twist-blue.svg);
+      bottom : -20px;
+      @include mq_sp{
+        height : size_sp(10);
+        background-image : url(./img/common/icn_twist-blue-sp.svg);
+        bottom : size_sp(-31);
+      }
+    }
+  }
+}

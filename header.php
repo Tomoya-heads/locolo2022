@@ -28,18 +28,18 @@
 
 		<!-- ヘッダー -->
 		<header class="common-header" id="Header">
-			<!-- <div class="common-header__inner"> -->
+			<div class="common-header__inner">
 				<!-- *** logo *** -->
-				<!-- <?php if(is_front_page()): ?>
+				<?php if(is_front_page()): ?>
 					<h1 class="common-header__logo">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<img src="http://placehold.jp/ffffff/000000/130x50.png?text=Logo" alt="ロゴ">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/txt_locolo-white.svg" alt="ロゴ">
 						</a>
 					</h1>
 				<?php else: ?>
 					<div class="common-header__logo">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<img src="http://placehold.jp/ffffff/000000/130x50.png?text=Logo" alt="ロゴ">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/txt_locolo-white.svg" alt="ロゴ">
 						</a>
 					</div>
 				<?php endif; ?>
@@ -50,15 +50,58 @@
 				</div>
 
 				<nav class="common-header__nav">
-					<ul class="common-header__menu">
-						<li><a href="<?php echo home_url('/about/'); ?>">About</a></li>
-						<li><a href="<?php echo home_url('/service/');?>">Service</a></li>
-						<li><a href="<?php echo home_url('/members/'); ?>">Members</a></li>
-						<li><a href="<?php echo home_url('/company/');?>">Company</a></li>
-						<li><a href="<?php echo home_url( '/contact/' ); ?>">Contact</a></li>
+					<ul class="common-header__list">
+						<li class="common-header__item"><a href="<?php if(!is_front_page() ||  !is_home()) {echo esc_url( home_url( '/' ) ); }?>#about">ABOUT</a></li>
+						<li class="common-header__item"><a href="<?php if(!is_front_page() ||  !is_home()) {echo esc_url( home_url( '/' ) ); }?>#howtofun">HOW TO FUN</a></li>
+						<li class="common-header__item"><a href="<?php if(!is_front_page() ||  !is_home()) {echo esc_url( home_url( '/' ) ); }?>#map">MAP</a></li>
+						<li class="common-header__item"><a href="<?php if(!is_front_page() ||  !is_home()) {echo esc_url( home_url( '/' ) ); }?>#price">PRICE</a></li>
+						<li class="common-header__item"><a href="<?php if(!is_front_page() ||  !is_home()) {echo esc_url( home_url( '/' ) ); }?>#location">LOCATION</a></li>
+						<!-- <li class="common-header__item"><a href="https://locolo2334.stores.jp/" target="_blank">GOODS</a></li> -->
+						<li class="common-header__item"><a href="<?php if(!is_front_page() ||  !is_home()) {echo esc_url( home_url( '/' ) ); }?>#faq">FAQ</a></li>
 					</ul>
+					<div class="common-header__sns tabsp-only">
+						<ul class="common-header__sns-list">
+						<!-- Twitter -->
+						<li class="common-header__sns-item">
+							<a href="//twitter.com/locolo2334" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_twitter-white.svg" alt="ロゴ"></a>
+						</li>
+						<!-- LINE -->
+						<!-- <li class="common-header__sns-item">
+							<a href="#" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_line-white.svg" alt="ロゴ"></a>
+						</li> -->
+						<!-- instagram -->
+						<li class="common-header__sns-item">
+							<a href="//www.instagram.com/locolo2334" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_instagram-white.svg" alt="ロゴ"></a>
+						</li>
+						<!-- YouTube -->
+						<li class="common-header__sns-item">
+							<a href="//www.youtube.com/channel/UCTOp6AMiEcsWlXDrbxabK1w" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_youtube-white.svg" alt="ロゴ"></a>
+						</li>
+						</ul>
+					</div>
 				</nav>
-			</div> -->
+
+				<div class="common-header__sns pc-only">
+					<ul class="common-header__sns-list">
+						<!-- Twitter -->
+						<li class="common-header__sns-item">
+							<a href="//twitter.com/locolo2334" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_twitter-white.svg" alt="ロゴ"></a>
+						</li>
+						<!-- LINE -->
+						<!-- <li class="common-header__sns-item">
+							<a href="＃" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_line-white.svg"></a>
+						</li> -->
+						<!-- instagram -->
+						<li class="common-header__sns-item">
+							<a href="//www.instagram.com/locolo2334" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_instagram-white.svg"></a>
+						</li>
+						<!-- YouTube -->
+						<li class="common-header__sns-item">
+							<a href="//www.youtube.com/channel/UCTOp6AMiEcsWlXDrbxabK1w" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_youtube-white.svg"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</header>
 		<!-- ////ヘッダー -->
 

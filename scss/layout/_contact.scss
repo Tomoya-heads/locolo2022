@@ -2,13 +2,14 @@
   &__inner{
     max-width: 584px;
     width: 100%;
-    margin: 0 auto;
+    margin: 80px auto 0;
     @include mq_sp{
       max-width: size_sp(630);
+      margin-top : size_sp(120);
     }
   }
   .common-heading{
-    margin-bottom: 71px;
+    margin-bottom: 56px;
     @include mq_sp{
       margin-bottom: size_sp(65);
     }
@@ -56,20 +57,25 @@
       }
     }
     &__thanksLogo{
-      width: 260px;
-      margin: 0 auto 41px;
+      width: 320px;
+      margin: 0 auto 40px;
       @include mq_sp{
-        width: size_sp(394);
-        margin-bottom: size_sp(85);
+        width: size_sp(420);
+        margin-bottom: size_sp(65);
       }
     }
     &__intro{
       text-align: center;
       line-height: (32/14);
-      margin-bottom: 69px;
+      margin-bottom: 34px;
       @include mq_sp{
         line-height: (58/28);
-        margin-bottom: size_sp(100);
+        margin-bottom: size_sp(60);
+      }
+    }
+    & .mod-btn {
+      @include mq_sp{
+        width : size_sp(320);
       }
     }
   }

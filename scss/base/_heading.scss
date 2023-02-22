@@ -31,4 +31,13 @@ h6 {
 }
 .font-en{
 	font-family: $base-font-family-en;
+	&.white {
+		color : $white00;
+	}
+	&.blue {
+		color : $blue01;
+	}
+	&.red {
+		color : $red01;
+	}
 }

@@ -27,10 +27,10 @@
     }
   }
   &__icn{
-    max-width: 155px;
-    margin: 0 auto 21px;
+    max-width: 296px;
+    margin: 0 auto 42px;
     @include mq_sp{
-      max-width: size_sp(258);
+      max-width: size_sp(418);
       margin-bottom: size_sp(54);
     }
   }

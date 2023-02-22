@@ -33,13 +33,13 @@
             </p>
           <ul class="<?php echo $pageName;?>__right-list">
             <li class="<?php echo $pageName;?>__right-item">
-              <a href="https://www.youtube.com/channel/UCTOp6AMiEcsWlXDrbxabK1w" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_youtube.svg" class="object_fit"></a>
+              <a href="//www.youtube.com/channel/UCTOp6AMiEcsWlXDrbxabK1w" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_youtube.svg" class="object_fit"></a>
             </li>
             <li class="<?php echo $pageName;?>__right-item">
-              <a href="https://twitter.com/LOCOLOVILLAGE" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_twitter.svg" class="object_fit"></a>
+              <a href="//twitter.com/locolo2334" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_twitter.svg" class="object_fit"></a>
             </li>
             <li class="<?php echo $pageName;?>__right-item">
-              <a href="https://www.instagram.com/locolovillage/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_instagram.svg" class="object_fit"></a>
+              <a href="//www.instagram.com/locolo2334/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/common/icn_instagram.svg" class="object_fit"></a>
             </li>
           </ul>
         </div>

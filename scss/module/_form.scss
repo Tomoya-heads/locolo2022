@@ -1,40 +1,50 @@
 input[type="text"],input[type="email"],select,textarea{
   @include font-size(14);
+  line-height : (28/14);
   @include placeholderColor(#aaa);
   width: 100%;
-  padding: 2px 7px;
+  padding: 3px 7px;
   min-height: auto;
   outline: none;
   background: $white00;
-  border: 1px solid gray;
   box-sizing: border-box;
   -webkit-appearance: none;/* ベンダープレフィックス(Google Chrome、Safari用) */
   -moz-appearance: none;	/* ベンダープレフィックス(Firefox用) */
   vertical-align: bottom;
   @include mq_sp{
     @include fz_vw(28);
-    padding: 0 size_sp(14);
+    padding: size_sp(2) size_sp(14);
   }
 }
 
 textarea{
-  height: 238px;
+  height: 240px;
   @include mq_sp{
-    height: size_sp(540);
+    height: size_sp(400);
   }
 }
 
 select{
   height: 39px;
+  padding : 3px 7px 3px 45px;
   -webkit-appearance: none;/* ベンダープレフィックス(Google Chrome、Safari用) */
   -moz-appearance: none;	/* ベンダープレフィックス(Firefox用) */
   appearance: none;	/* 標準のスタイルを無効にする */
   position: relative;
-  background-image: url("../../img/common/arw_select.svg");
-  background-repeat: no-repeat;
+  background-image: url(./img/common/icn_triangle-gray.svg);
+  background-size: cover;
+  background-repeat : no-repeat;
   background-size: 20px;
-  background-position: center right 10px;
+  background-position: center left 10px;
   box-sizing: border-box;
+  position : relative;
+  @include mq_sp{
+    width : size_sp(329);
+    height : size_sp(60);
+    padding : size_sp(3) size_sp(12) size_sp(3) size_sp(78);
+    background-size: size_sp(32);
+    background-position: center left size_sp(16);
+  }
 }
 ::-ms-expand {	/* select要素のデザインを無効にする（IE用） */
 display: none;
@@ -46,39 +56,30 @@ display: none;
     position: relative;
     @include mq_sp{
     }
-    & + .horizontal-item{
-      margin-left: 30px;
+    & + .horizontal-item {
+      margin-left: 0;
+    }
+    &:not(:nth-of-type(2n)) {
+      margin-right : 30px;
       @include mq_sp{
-        margin-left: size_sp(30);
+        margin-right : size_sp(60);
       }
     }
     &:nth-of-type(n + 3){
+      margin-top: 3px;
       @include mq_sp{
-        margin-top: size_sp(17);
+        margin-top: size_sp(3);
       }
     }
-    &:nth-of-type(3),&:nth-of-type(5){
+    &:nth-of-type(n + 2){
       @include mq_sp{
-        margin-left: 0;
-      }
-    }
-    &:nth-of-type(4){
-      margin-left: 0;
-      @include mq_sp{
-        margin-left: size_sp(30);
-      }
-    }
-    &:nth-of-type(n + 4){
-      margin-top: 16px;
-      @include mq_sp{
-        margin-top: size_sp(17);
+        margin-top: size_sp(3);
       }
     }
   }
 }
 .mwform-radio-field-text{
   @include flex(inline-flex, nowrap, flex-start, center, normal, row);
-  @include font-size(14);
   font-weight: 300;
 }
 input[type="radio"]{
@@ -89,15 +90,19 @@ input[type="radio"]{
       content: '';
       background: $white00;
       border-radius: 50%;
-      border: 1px solid darken($black00, 25%);
       display: inline-block;
-      width: 1em;
-      height: 1em;
-      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+      margin-right: 14px;
       vertical-align: top;
       cursor: pointer;
       text-align: center;
       transition: all 250ms ease;
+      @include mq_sp{
+        width : size_sp(40);
+        height : size_sp(40);
+        margin-right : size_sp(20);
+      }
     }
   }
   &:checked {
@@ -139,11 +144,16 @@ input[type="button"], input[type="reset"], input[type="submit"]{
     &:nth-of-type(n + 2){
       margin-top: 30px;
       @include mq_sp{
-        margin-top: size_sp(60);
+        margin-top: size_sp(51);
       }
     }
     &.kinds{
       .form__col{
+        &:first-of-type {
+          @include mq_sp{
+            margin-bottom : size_sp(10);
+          }
+        }
         &:nth-of-type(2){
           @include flex(flex, wrap, flex-start, normal, normal, row);
         }
@@ -162,10 +172,10 @@ input[type="button"], input[type="reset"], input[type="submit"]{
       line-height: 2;
       width: 584px - 411px;
       @include mq_sp{
-        @include fz_vw(28);
-        line-height: (35/28);
+        @include fz_vw(30);
+        line-height: (62/30);
         width: 100%;
-        margin-bottom: size_sp(20);
+        margin-bottom: size_sp(4);
       }
     }
     &:nth-of-type(2){
@@ -173,6 +183,7 @@ input[type="button"], input[type="reset"], input[type="submit"]{
       width: 411px;
       @include mq_sp{
         @include fz_vw(28);
+        line-height : (35/28);
         width: 100%;
       }
     }
@@ -195,11 +206,11 @@ input[type="button"], input[type="reset"], input[type="submit"]{
   }
   &__btn{
     @include flex(flex, wrap, space-between, normal, normal, row);
-    margin-top: 70px;
+    margin-top: 60px;
     @include mq_sp{
       align-items: center;
       flex-direction: column-reverse;
-      margin-top: size_sp(100);
+      margin-top: size_sp(80);
     }
     &-col{
       &.submit{
@@ -245,7 +256,7 @@ input[type="button"], input[type="reset"], input[type="submit"]{
 .mw_wp_form_confirm{
   .form{
     &__row{
-      margin-top: 40px;
+      margin-top: 24px;
       @include mq_sp{
         margin-top: size_sp(64);
       }
@@ -262,11 +273,17 @@ input[type="button"], input[type="reset"], input[type="submit"]{
       }
     }
     &__btn{
-      margin-top: 60px;
+      width : 360px;
+      margin: 60px auto 0;
       @include mq_sp{
+        width : size_sp(360);
         margin-top: size_sp(90);
+        flex-direction: column-reverse;
       }
       &-col{
+        @include mq_sp{
+          width : 100%;
+        }
         &.btn__more{
           margin: 0;
         }
