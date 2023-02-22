@@ -1,0 +1,179 @@
+.top-kv {
+  width : 100vw;
+  height : 100vh;
+  // height : calc(100vh - 70px);
+  background-image : url(./img/top/keyvisual/bg_kv.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow : hidden;
+  @include mq_sp{
+    // height : calc(100vh - #{size_sp(99)});
+  }
+  &:before {
+    content: "";
+    width : 100%;
+    height : 100%;
+    background-color : rgba($black01, .4);
+    position: absolute;
+    top : 0;
+    left: 0;
+  }
+  &__inner {
+    color :$white00;
+    width : 100%;
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    // transform: translate(-50%, -57%);
+    transform: translate(-50%, -48%);
+    @include mq_sp{
+      transform: translate(-50%, -61%);
+    }
+  }
+  &__logo {
+    width : 296px;
+    margin : 0 auto;
+    @include mq_sp{
+      width : size_sp(418);
+    }
+  }
+  &__concept {
+    font-size : 34px;
+    font-weight : 700;
+    letter-spacing: .11em;
+    line-height : (70/34);
+    text-align: center;
+    margin-top : 30px;
+    @include mq_sp{
+      @include fz_vw(48);
+      line-height : (87/48);
+      margin-top : size_sp(62);
+    }
+  }
+  &__txt {
+    font-size : 17px;
+    font-weight: 500;
+    line-height: (39/17);
+    text-align: center;
+    margin-top : 12px;
+    @include mq_sp{
+      @include fz_vw(32);
+      line-height: (66/32);
+      margin-top : size_sp(32);
+    }
+  }
+  &__wave {
+    width: 100%;
+    // @include flex(flex, nowrap, flex-start, center, normal, row);
+    position: absolute;
+    left : 0;
+    bottom : 0;
+    z-index: 2;
+    transform: translateY(100%);
+    transition : 1s;
+    &-inner {
+      width : 100%;
+      height : 86px;
+      background-image : url(./img/common/icn_wave-item.svg);
+      background-size: 141px; /* 画像の高さ */
+      background-repeat: repeat-x;
+      animation: loop01 16s linear infinite;
+      @include mq_tab{
+        background-size : 142px;
+      }
+      @include mq_sp{
+        width : 100%;
+        height :size_sp(115);
+        animation: loop01-sp 8s linear infinite;
+        background-image : url(./img/common/icn_wave-item-sp.svg);
+        background-size: size_sp(188.5); /* 画像の高さ */
+      }
+    }
+  }
+  @keyframes loop01 {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -1401px 0; /* 画像のマイナス幅 */
+      // @include mq_sp{
+      //   background-position: size_sp(-1400) 0; /* 画像のマイナス幅 */
+      // }
+    }
+  }
+  @keyframes loop01-sp {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: size_sp(-753) 0; /* 画像のマイナス幅 */
+      // @include mq_sp{
+      //   background-position: size_sp(-1400) 0; /* 画像のマイナス幅 */
+      // }
+    }
+  }
+// スクロール促進
+  &__scroll {
+    font-size : 26px;
+    letter-spacing : 0.2em;
+    line-height : 1;
+    font-weight : bold;
+    display : inline-block;
+    position : absolute;
+    writing-mode: vertical-rl;
+    bottom : 277px;
+    left : 43px;
+    opacity : 0;
+    transition: 1s;
+    @include mq_sp{
+      @include fz_vw(34);
+      left : 50%;
+      bottom : size_sp(198);
+      transform : translateX(-48%);
+      writing-mode: horizontal-tb;
+    }
+    & span {
+      position : relative;
+      &::after {
+        content : '';
+        width : 2px;
+        height : 263px;
+        display : block;
+        //background : $red01;
+        background : $white00;
+        position : absolute;
+        top : 133px;
+        left : 13px;
+        animation: sdl 3.2s cubic-bezier(1,0,0,1) infinite;
+        @include mq_sp{
+          width : size_sp(3);
+          height : size_sp(172);
+          top : size_sp(68);
+          left : 46%;
+          transform : translateX(-100%);
+        }
+      }
+    }
+  }
+  @keyframes sdl {
+    0% {
+      // opacity: 1;
+      transform: scale(1, 0) translateX(50%);
+      transform-origin: 0 0;
+    }
+    30% {
+      transform: scale(1, 1) translateX(50%);
+      transform-origin: 0 0;
+    }
+    30.1%, 70% {
+      transform: scale(1, 1) translateX(50%);
+      transform-origin: 0 100%;
+    }
+    100% {
+      transform: scale(1, 0) translateX(50%);
+      transform-origin: 0 100%;
+    }
+  }
+
+}

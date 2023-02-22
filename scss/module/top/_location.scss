@@ -1,0 +1,199 @@
+.top-location {
+  padding-top : 209px;
+  @include mq_sp{
+    padding-top : size_sp(210);
+  }
+  &__explanation {
+    width : 570px;
+    margin : 48px auto 0;
+    @include mq_sp{
+      width : size_sp(615);
+      margin-top : size_sp(69);
+    }
+  }
+  &__car {
+    width : 756px;
+    margin : 66px auto 0;
+    @include mq_sp{
+      width : size_sp(572);
+      margin-top : size_sp(99);
+    }
+    & .mod-subTtl {
+      font-size : 19px;
+      @include mq_sp{
+        @include fz_vw(34);
+      }
+    }
+    &-list {
+      margin-top : 60px;
+      @include flex(flex, nowrap, space-between, stretch, normal, row);
+      @include mq_sp{
+        margin-top : size_sp(100);
+        flex-direction: column;
+      }
+    }
+    &-item {
+      width : 360px;
+      @include mq_sp{
+        width : size_sp(532);
+        margin : 0 auto;
+      }
+      &:not(:first-of-type) {
+        @include mq_sp{
+          margin-top : size_sp(88)
+        }
+      }
+      & .mod-subTtl {
+        font-size : 17px;
+        @include mq_sp{
+          @include fz_vw(30);
+        }
+      }
+    }
+    &-txt {
+      margin-top : 33px;
+      @include mq_sp{
+        margin-top : size_sp(69);
+      }
+    }
+    &-caution {
+      width : 490px;
+      border : solid 4px $red01;
+      padding : 24px 36px 12px;
+      margin : 62px auto 0;
+      @include mq_sp{
+        width : 100%;
+        border : solid size_sp(6) $red01;
+        padding : size_sp(42) size_sp(40) size_sp(26);
+        margin-top : size_sp(81);
+      }
+      &-ttl {
+        font-size : 17px;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        color : $red01;
+        @include mq_sp{
+          @include fz_vw(30);
+        }
+      }
+      &-txt {
+        margin-top : 18px;
+        @include mq_sp{
+          margin-top : size_sp(28);
+          text-align: center;
+        }
+      }
+    }
+  }
+  &__route {
+    margin-top : 74px;
+    @include mq_sp{
+      margin-top : size_sp(87);
+    }
+    & .mod-subTtl {
+      &:before {
+        bottom : -28px;
+        @include mq_sp{
+          bottom : size_sp(-30);
+        }
+      }
+    }
+    &-video {
+      width : 550px;
+      height : 309px;
+      margin : 47px auto 0;
+      @include mq_sp{
+        width : 100%;
+        height : size_sp(422);
+        margin-top : size_sp(77);
+      }
+    }
+  }
+  &__transport {
+    margin-top : 104px;
+    @include mq_sp{
+      margin-top : size_sp(158);
+    }
+    & .mod-subTtl {
+      font-size : 19px;
+      @include mq_sp{
+        @include fz_vw(34);
+      }
+    }
+    &-txt {
+      width : 408px;
+      margin : 50px auto 0;
+      @include mq_sp{
+        width : size_sp(532);
+        margin-top : size_sp(84);
+      }
+    }
+  }
+  &__map {
+    height : 353px;
+    margin-top : 62px;
+    @include mq_sp{
+      height : size_sp(500);
+      margin-top : size_sp(70);
+    }
+  }
+  &__access {
+    width : 350px;
+    margin : 50px auto 0;
+    @include mq_sp{
+      width : size_sp(558);
+      margin-top : size_sp(80);
+    }
+    &-list {
+      padding: 33px 40px;
+      background-color: rgba($white00, .6);
+      position : relative;
+      @include mq_sp{
+        padding : size_sp(32) size_sp(40) size_sp(29);
+      }
+      &:before {
+        content : "";
+        width : 56px;
+        height : 6px;
+        background-image : url(./img/common/icn_twist-blue.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        top : 50%;
+        left: 50%;
+        transform : translate(-50%, -50%);
+        @include mq_sp{
+          width : size_sp(86);
+          height :size_sp(10);
+          background-image : url(./img/common/icn_twist-blue-sp.svg);
+        }
+      }
+    }
+    &-item {
+      font-size : 17px;
+      line-height : (39/17);
+      text-align: center;
+      @include mq_sp{
+        @include fz_vw(30);
+        line-height : (62/30);
+      }
+      &:nth-of-type(2) {
+        margin-top : 29px;
+        position: relative;
+        @include mq_sp{
+          margin-top : size_sp(48);
+        }
+      }
+    }
+    & .mod-btn {
+      width : 174px;
+      margin : 30px auto 0;
+      @include mq_sp{
+        width : size_sp(312);
+        padding : size_sp(28) 0 size_sp(26);
+        margin-top : size_sp(50);
+      }
+    }
+  }
+}

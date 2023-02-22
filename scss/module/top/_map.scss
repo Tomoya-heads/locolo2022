@@ -1,0 +1,349 @@
+.top-map {
+  padding-top : 295px;
+  @include mq_sp{
+    padding-top : size_sp(336);
+  }
+  &__container {
+    padding-top : 58px;
+    background-color : $gray02;
+    position: relative;
+    @include mq_sp{
+      padding-top : size_sp(40);
+    }
+    &:before {
+      content: "";
+      width : 554px;
+      height : 118px;
+      background-image : url(./img/top/map/icn_mountain.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: absolute;
+      top : -118px;
+      left : 50%;
+      transform: translateX(-50%);
+      @include mq_sp{
+        width : size_sp(750);
+        height : size_sp(160);
+        top : size_sp(-160);
+      }
+    }
+  }
+  &__explanation {
+    width : 570px;
+    margin : 49px auto 0;
+    @include mq_sp{
+      width : size_sp(616);
+      margin-top : size_sp(69);
+    }
+  }
+  &__location {
+    width : 848px;
+    margin : 42px auto 0;
+    position: relative;
+    @include mq_sp{
+      width : 100%;
+      margin-top : size_sp(71);
+    }
+    &-list {
+      width : 100%;
+      height : 100%;
+      position : absolute;
+      top : 0;
+      left : 0;
+    }
+    &-item {
+      // background-color : rgba(255,255,255,.7);
+      position: absolute;
+      cursor: pointer;
+      &01 {
+        width : 198px;
+        height : 96.5px;
+        top : 75px;
+        left : 152px;
+        @include mq_sp{
+          width : size_sp(175);
+          height : size_sp(85);
+          top : size_sp(65);
+          left : size_sp(134);
+        }
+      }
+      &02 {
+        width : 142px;
+        height : 314px;
+        top : 75px;
+        left : 8px;
+        @include mq_sp{
+          width : size_sp(125);
+          height : size_sp(277);
+          top : size_sp(65);
+          left : size_sp(8);
+        }
+      }
+      &03 {
+        width : 329px;
+        height : 217px;
+        top : 172px;
+        left : 152px;
+        @include mq_sp{
+          width : size_sp(291);
+          height : size_sp(197);
+          top : size_sp(151);
+          left : size_sp(134);
+        }
+      }
+      &04 {
+        width : 553px;
+        height : 190px;
+        left : 8px;
+        bottom : 20px;
+        @include mq_sp{
+          // width : size_sp(489);
+          width :size_sp(440);
+          height : size_sp(170);
+          left : size_sp(8);
+          bottom : size_sp(18);
+        }
+      }
+      &05 {
+        width : 167px;
+        height : 75px;
+        top : 72px;
+        right : 120px;
+        @include mq_sp{
+          width : size_sp(147);
+          height : size_sp(64);
+          top : size_sp(65);
+          right : size_sp(105);
+        }
+      }
+      &06 {
+        width : 250px;
+        height : 75px;
+        top : 148px;
+        right : 116px;
+        @include mq_sp{
+          width : size_sp(218);
+          height : size_sp(66);
+          top : size_sp(130);
+          right : size_sp(105);
+        }
+      }
+      &07 {
+        width : 275px;
+        height : 202px;
+        right : 12px;
+        bottom : 175px;
+        @include mq_sp{
+          width : size_sp(244);
+          height : size_sp(178);
+          right : size_sp(8);
+          bottom : size_sp(155);
+        }
+      }
+    }
+    &-modal {
+      width : 768px;
+      position : fixed;
+      top : 50%;
+      left : 50%;
+      transform : translate(-50%, -50%);
+      z-index : 102;
+      opacity : 0;
+      transition : .6s;
+      pointer-events: none;
+      @include mq_sp{
+        width : size_sp(704);
+        transform : translate(-50%, -17%);
+      }
+      &.active {
+        opacity : 1;
+        pointer-events: all;
+      }
+      &-list {
+        width : 520px;
+        padding : 32px 0;
+        margin-left : auto;
+        background-image : url(./img/common/bg_washi.jpg);
+        background-size: cover;
+        background-repeat: repeat;
+        @include mq_sp{
+          width : 100%;
+          padding : size_sp(34) 0 size_sp(92);
+        }
+        &:before {
+          content : "";
+          width : 317px;
+          height : 317px;
+          background-color : $white00;
+          position: absolute;
+          top : -95px;
+          left : -250px;
+          border-radius: 50%;
+          z-index: 0;
+          @include mq_sp{
+            width : size_sp(485);
+            height : size_sp(485);
+            top : size_sp(-455);
+            left : size_sp(6);
+          }
+        }
+        &:after {
+          content : "";
+          width : 100vw;
+          height : 100%;
+          position : absolute;
+          top : 0;
+          left : 100%;
+        }
+        & .slick-list {
+          overflow : visible;
+        }
+        & .slick-arrow {
+          width : 20px;
+          height : 34px;
+          background : transparent;
+          opacity : 1;
+          z-index: 10;
+          @include mq_sp{
+            width : size_sp(36);
+            height : size_sp(60);
+          }
+          &:hover {
+            // background : transparent;
+            // background-image : url(./img/top/map/icn_arrow-red.svg);
+            // background-size: cover;
+            // background-repeat: repeat;
+            opacity: 1;
+          }
+          &:before {
+            content : "";
+            width : 100%;
+            height : 100%;
+            background-image : url(./img/top/map/icn_arrow-red.svg);
+            background-size: cover;
+            background-repeat: repeat;
+            position : absolute;
+            top : 0;
+            left : 0;
+          }
+          &.slick-prev {
+            left : 59px;
+            transform: translate(0,30%);
+            @include mq_sp{
+              left : size_sp(20);
+              transform: translate(0,-15%);
+            }
+          }
+          &.slick-next {
+            right : 15px;
+            transform : rotate(180deg) translate(0,-30%);
+            @include mq_sp{
+              right : size_sp(20);
+              transform : rotate(180deg) translate(0,15%);
+
+            }
+          }
+        }
+      }
+      &-item {}
+      &-inner {
+        width : 420px;
+        padding-left : 45px;
+        margin : 0 auto;
+        @include mq_sp{
+          width : size_sp(532);
+          padding : 0;
+        }
+      }
+      &-img {
+        width : 317px;
+        height : 317px;
+        position: absolute;
+        top: -128px;
+        left: -248px;
+        border-radius : 50%;
+        overflow: hidden;
+        z-index: 30;
+        @include mq_sp{
+          width : size_sp(485);
+          height : size_sp(485);
+          top : size_sp(-488);
+          left : size_sp(6);
+        }
+        & img {
+          width : 100%;
+          height : 100%;
+          object-fit: cover;
+        }
+      }
+      &-name {
+        font-size : 20px;
+        text-align : center;
+        line-height: 2.3;
+        font-weight: 700;
+        @include mq_sp{
+          @include fz_vw(36);
+        }
+      }
+      &-txt {
+        font-size : 15px;
+        line-height: (35/15);
+        margin-top : 9px;
+        @include mq_sp{
+          @include fz_vw(28);
+          line-height : (58/28);
+          margin-top : size_sp(16);
+        }
+      }
+      &-magnifying {
+        width : 337px;
+        position : absolute;
+        top : -109px;
+        left : 22px;
+        transform : rotate(-24deg);
+        pointer-events : none;
+        @include mq_sp{
+          width : size_sp(818);
+          top : size_sp(-552);
+          left : size_sp(-92);
+          transform : rotate(0deg);
+        }
+      }
+      &-stamp {
+        width : 77px;
+        transform : rotate(26deg);
+        position : absolute;
+        top : -27px;
+        right : 20px;
+        @include mq_sp{
+          width : size_sp(100);
+          top : auto;
+          right : size_sp(25);
+          bottom : size_sp(28);
+        }
+      }
+      &-box {
+        width : 100vw;
+        height : 100%;
+        position :absolute;
+        top : 0;
+        left : 100%;
+        z-index : 1;
+      }
+    }
+  }
+  &__insta {
+    margin-top : 120px;
+    @include mq_sp{
+      margin-top : size_sp(120);
+    }
+    & .sbi_item {
+      @media (max-width: 800px){
+        width : 20% !important;
+      }
+      @include mq_sp{
+        width : 25% !important;
+      }
+    }
+  }
+}

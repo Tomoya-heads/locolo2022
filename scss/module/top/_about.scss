@@ -1,0 +1,134 @@
+.top-about {
+  padding-top : 108px;
+  @include mq_sp{
+    padding-top : size_sp(130);
+  }
+  &__inner {
+    margin-top : 69px;
+    position: relative;
+    z-index: 1;
+    @include mq_sp{
+      margin-top : size_sp(68);
+    }
+    &:before {
+      content : "";
+      width: 100%;
+      height : 344px;
+      background-color: rgba($pink01,.2);
+      position: absolute;
+      top : 87px;
+      left : 0;
+      z-index: -1;
+      @include mq_sp{
+        height : size_sp(581);
+        top : size_sp(230);
+      }
+    }
+  }
+  &__high {
+    width : 768px;
+    padding-right : 294px;
+    margin : 0 auto;
+    position: relative;
+    @include mq_sp{
+      width : size_sp(650);
+      padding-right : size_sp(118);
+    }
+  }
+  &__stamp {
+    width : 121.7px;
+    position: absolute;
+    top : 12px;
+    right : 57px;
+    transform: rotate(26deg);
+    @include mq_sp{
+      width : size_sp(160);
+      top : auto;
+      right : size_sp(86);
+      bottom : size_sp(-678);
+    }
+  }
+  &__low {
+    height : 428px;
+    margin-top : 32px;
+    @include flex(flex, nowrap, flex-start, center, normal, row);
+    @include mq_sp{
+      height : auto;
+      margin-top : size_sp(61);
+      align-items : stretch;
+      flex-direction: column-reverse;
+    }
+  }
+  &__left {
+    width : 50%;
+    padding-top : 40px;
+    @include mq_sp{
+      width : size_sp(650);
+      padding-top : size_sp(50);
+      padding-right : size_sp(353);
+      margin : 0 auto;
+    }
+    &-inner {
+      width : (336/640)*100%;
+      padding-left : (39/640)*100%;
+      margin : 0 auto 0;
+      border-radius: 7px;
+      @include mq_sp{
+        width : 100%;
+        padding-left : 0;
+        border-radius: size_sp(10);
+      }
+    }
+  }
+  &__right {
+    width : 50%;
+    height : 100%;
+    border-radius: 7px 0px 0px 7px;
+    overflow: hidden;
+    @include mq_sp{
+      width : size_sp(580);
+      margin-left : auto;
+      padding-left : 0;
+      border-radius: size_sp(10) 0px 0px size_sp(10);
+    }
+  }
+  &__wave {
+    width: 100%;
+    position: absolute;
+    left : 0;
+    bottom : 0;
+    z-index: -1;
+    @include mq_sp{
+      bottom : size_sp(-118);
+    }
+    &-inner {
+      width : 100%;
+      height : 46px;
+      background-image : url(./img/top/about/icn_wave-item.svg);
+      background-size: contain;
+      background-repeat: repeat-x;
+      animation: loop02 16s linear infinite;
+      @include mq_sp{
+        height :size_sp(68);
+        background-image : url(./img/top/about/icn_wave-item-sp.svg);
+        animation: loop02-sp 8s linear infinite;
+      }
+    }
+  }
+  @keyframes loop02 {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -1400px 0; /* 画像のマイナス幅 */
+    }
+  }
+  @keyframes loop02-sp {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: size_sp(-749.5) 0; /* 画像のマイナス幅 */
+    }
+  }
+}

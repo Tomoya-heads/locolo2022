@@ -1,0 +1,96 @@
+.top-contact {
+  padding-top : 207px;
+  @include mq_sp{
+    padding-top : size_sp(209);
+  }
+  &__inner {
+    width : 570px;
+    margin : 0 auto;
+    @include mq_sp{
+      width : size_sp(616);
+    }
+  }
+  &__explanation {
+    margin-top : 50px;
+    @include mq_sp{
+      margin-top : size_sp(68);
+    }
+  }
+  &__note {
+    font-size : 12px;
+    line-height: 1;
+    margin-top : 44px;
+    display: block;
+    @include mq_sp{
+      @include fz_vw(28);
+      margin-top : size_sp(78);
+    }
+  }
+  & .mw_wp_form {
+    margin-top : 33px;
+    @include mq_sp{
+      margin-top : size_sp(56);
+    }
+  }
+  & .form {
+    &__row {
+      &.name {
+        margin-top : 24px;
+        @include mq_sp{
+          margin-top : size_sp(43);
+        }
+      }
+      &.gender {
+        margin-top : 31px;
+        @include mq_sp{
+          margin-top : size_sp(51);
+        }
+      }
+      &.age {
+        margin-top : 23px;
+        @include mq_sp{
+          margin-top : size_sp(45);
+        }
+      }
+      &.content {
+        margin-top : 26px;
+        @include mq_sp{
+          margin-top : size_sp(51);
+        }
+      }
+    }
+    &__col {
+      font-size : 15px;
+      line-height : (34/15);
+      @include mq_sp{
+        @include fz_vw(30);
+        line-height : (62/30);
+      }
+      &:first-of-type {
+        width : 158px;
+        margin-right : 10px;
+        @include mq_sp{
+          width : 100%;
+          margin-right : 0;
+          margin-bottom : size_sp(9);
+        }
+      }
+      &:nth-of-type(2) {
+        width : 402px;
+        @include mq_sp{
+          width : 100%;
+        }
+      }
+    }
+    &__btn {
+      & .mod-btn {
+        width : 174px;
+        padding : 10px 0px 9px;
+        @include mq_sp{
+          width : size_sp(312);
+          padding : size_sp(22) 0 size_sp(21);
+        }
+      }
+    }
+  }
+}
